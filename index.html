@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FUN JAPANESE — Privacy Policy / プライバシーポリシー</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --card: #181b24;
+      --border: #2a2f3d;
+      --text: #e8eaed;
+      --muted: #9aa0a6;
+      --accent: #ef4444;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f8f9fa;
+        --card: #ffffff;
+        --border: #dadce0;
+        --text: #202124;
+        --muted: #5f6368;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 2rem 1rem 4rem;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", sans-serif;
+      line-height: 1.7;
+    }
+    main {
+      max-width: 820px;
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2rem 2.2rem;
+    }
+    h1 { margin-top: 0; font-size: 1.6rem; }
+    h2 { margin-top: 2rem; padding-top: 1.2rem; border-top: 1px solid var(--border); font-size: 1.25rem; }
+    h3 { margin-top: 1.4rem; font-size: 1.05rem; }
+    .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.2rem; }
+    .lang-nav { display: flex; gap: 0.75rem; margin-bottom: 1.5rem; }
+    .lang-nav a {
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+    .lang-nav a:hover { border-color: var(--accent); color: var(--accent); }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+    th, td { text-align: left; padding: 0.55rem 0.65rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    th { color: var(--muted); font-weight: 600; }
+    code {
+      background: rgba(128, 128, 128, 0.16);
+      padding: 0.1rem 0.35rem;
+      border-radius: 4px;
+      font-size: 0.88em;
+    }
+    a { color: #60a5fa; }
+    ul { padding-left: 1.3rem; }
+    li { margin-bottom: 0.4rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>FUN JAPANESE — Privacy Policy</h1>
+    <p class="meta">Last updated: 25 November 2026</p>
+    <nav class="lang-nav">
+      <a href="#en">English</a>
+      <a href="#ja">日本語</a>
+    </nav>
+
+    <section id="en">
+      <p>
+        <strong>FUN JAPANESE</strong> is a Chrome extension that translates browser tab audio and microphone speech in real time with floating bilingual subtitles and speech synthesis.
+        It operates <strong>without any developer-owned backend server</strong>: the developer collects no personal data, runs no analytics or telemetry, and never receives your audio, transcripts, or API key.
+      </p>
+
+      <h3>1. Data Handled by the Extension</h3>
+      <table>
+        <thead>
+          <tr><th>Data</th><th>Where it is sent</th><th>Where it is stored</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Tab &amp; microphone audio</strong></td><td>Google Gemini Live API (<code>generativelanguage.googleapis.com</code>) only while capture is running</td><td>Not stored (streamed in memory and discarded)</td></tr>
+          <tr><td><strong>Transcripts &amp; translations</strong></td><td>Shown locally in the UI; sent to <code>127.0.0.1</code> only when a local TTS engine is chosen</td><td>Session memory only (unless bookmarked)</td></tr>
+          <tr><td><strong>Saved phrases (Phrasebook)</strong></td><td>Nowhere</td><td><code>chrome.storage.local</code> on your device</td></tr>
+          <tr><td><strong>Your Gemini API key</strong></td><td><code>generativelanguage.googleapis.com</code> only</td><td><code>chrome.storage.local</code> on your device</td></tr>
+          <tr><td><strong>Settings &amp; glossary</strong></td><td>Nowhere (Chrome Sync only if enabled by you)</td><td><code>chrome.storage.local</code> / <code>chrome.storage.sync</code></td></tr>
+          <tr><td><strong>Pro license key</strong> (optional)</td><td>Polar License API (<code>api.polar.sh</code>) only</td><td><code>chrome.storage.local</code> / <code>chrome.storage.sync</code></td></tr>
+          <tr><td><strong>Model names &amp; rates</strong> (optional)</td><td>Plain static <code>GET</code> from <code>sukesan666.github.io</code> (no user identifiers sent)</td><td><code>chrome.storage.local</code> (short-term cache)</td></tr>
+        </tbody>
+      </table>
+
+      <h3>2. External Connections</h3>
+      <ul>
+        <li><strong>Google Gemini Live API</strong> (<code>https://generativelanguage.googleapis.com/*</code>): Direct connection using your own API key, subject to Google's <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noreferrer">Gemini API Terms</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">Privacy Policy</a>.</li>
+        <li><strong>Polar</strong> (<code>https://api.polar.sh/*</code>): Used only when activating or validating a Pro license key (<a href="https://polar.sh/legal/privacy" target="_blank" rel="noreferrer">Privacy Policy</a>).</li>
+        <li><strong>Local Japanese TTS Engines</strong> (<code>http://127.0.0.1/*</code>, <code>http://localhost/*</code>): Optional local-only connection to AivisSpeech, VOICEVOX, VOICEVOX Nemo, COEIROINK v2, or SHAREVOX running on your own PC.</li>
+      </ul>
+
+      <h3>3. What FUN JAPANESE Does NOT Do</h3>
+      <ul>
+        <li>Does not collect, sell, or transfer user data to third parties.</li>
+        <li>Does not include analytics, telemetry, crash reporting, or advertising trackers.</li>
+        <li>Does not scrape or read web page content.</li>
+      </ul>
+
+      <h3>4. Contact</h3>
+      <p>Questions or requests: <a href="https://github.com/sukesan666/fun-japanese-policy/issues" target="_blank" rel="noreferrer">GitHub Issues</a>.</p>
+    </section>
+
+    <section id="ja">
+      <h2>日本語（プライバシーポリシー）</h2>
+      <p>
+        <strong>FUN JAPANESE</strong> は、ブラウザのタブ音声やマイク音声をリアルタイム翻訳し、フローティング2言語字幕・音声読み上げを提供する Chrome 拡張機能です。
+        本拡張機能には<strong>開発者が運営する中継サーバーはありません</strong>。開発者がユーザーの音声・字幕・API キー・個人情報を収集・閲覧することは一切ありません。
+      </p>
+
+      <h3>1. 取り扱うデータ</h3>
+      <table>
+        <thead>
+          <tr><th>データ</th><th>送信先</th><th>保存場所</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>タブ音声・マイク音声</strong></td><td>翻訳実行中のみ Google Gemini Live API（<code>generativelanguage.googleapis.com</code>）へ直接送信</td><td>保存しません（メモリ処理後に破棄）</td></tr>
+          <tr><td><strong>字幕・翻訳テキスト</strong></td><td>画面表示のみ（ローカル音声利用時のみ PC 内 <code>127.0.0.1</code> へ送信）</td><td>セッション中のメモリのみ（☆保存分を除く）</td></tr>
+          <tr><td><strong>フレーズ帳（保存フレーズ）</strong></td><td>外部送信しません</td><td>端末の <code>chrome.storage.local</code></td></tr>
+          <tr><td><strong>Gemini API キー</strong></td><td><code>generativelanguage.googleapis.com</code> のみ</td><td>端末の <code>chrome.storage.local</code></td></tr>
+          <tr><td><strong>各種設定・用語集</strong></td><td>外部送信しません</td><td><code>chrome.storage.local</code> / <code>chrome.storage.sync</code></td></tr>
+          <tr><td><strong>Pro ライセンスキー</strong>（任意）</td><td>Polar API（<code>api.polar.sh</code>）のみ</td><td><code>chrome.storage.local</code> / <code>chrome.storage.sync</code></td></tr>
+          <tr><td><strong>モデル名・料金情報</strong>（任意）</td><td><code>sukesan666.github.io</code> からの静的 <code>GET</code>（個人情報は一切送信しません）</td><td><code>chrome.storage.local</code>（一時キャッシュ）</td></tr>
+        </tbody>
+      </table>
+
+      <h3>2. 外部通信と権限</h3>
+      <ul>
+        <li><strong>Google Gemini Live API</strong>：ユーザー自身の API キーによる直接通信（<a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noreferrer">利用規約</a> / <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">プライバシーポリシー</a>）。</li>
+        <li><strong>Polar</strong>：Pro ライセンスキーの認証・検証時のみ通信（<a href="https://polar.sh/legal/privacy" target="_blank" rel="noreferrer">プライバシーポリシー</a>）。</li>
+        <li><strong>ローカル音声合成ソフト</strong>（<code>127.0.0.1</code> / <code>localhost</code>）：AivisSpeech・VOICEVOX・VOICEVOX Nemo・COEIROINK v2・SHAREVOX とのローカル通信のみ（外部送信なし）。</li>
+      </ul>
+
+      <h3>3. 行わないこと</h3>
+      <ul>
+        <li>ユーザーデータの収集・販売・第三者提供は一切行いません。</li>
+        <li>アクセス解析（Analytics）・テレメトリ・広告トラッキングは一切組み込んでいません。</li>
+        <li>Web ページの本文や個人情報を読み取って送信することはありません。</li>
+      </ul>
+
+      <h3>4. お問い合わせ</h3>
+      <p>ご質問・ご連絡は <a href="https://github.com/sukesan666/fun-japanese-policy/issues" target="_blank" rel="noreferrer">GitHub Issues</a> よりお願いいたします。</p>
+    </section>
+  </main>
+</body>
+</html>
